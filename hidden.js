@@ -92,7 +92,13 @@
 			}
 			chrono = new Date();
 			plugin.start = chrono.getTime()
-
+			
+			$(window).keydown(function(e){
+			    if ((e.ctrlKey || e.metaKey) && (e.keyCode === 70 || e.keyCode == 71)) {
+			        e.preventDefault();
+			    }
+			});
+			
 		}
 		// public methods
 		// these methods can be called like:
