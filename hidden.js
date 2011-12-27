@@ -18,7 +18,8 @@
 		// this is private property and is accessible only from inside the plugin
 		var defaults = {
 
-			phrase : 'Bonne annee 2012'
+			phrase : 'Bonne annee 2012',
+			color : 'red'
 
 		}
 
