@@ -17,10 +17,9 @@
 		// plugin's default options
 		// this is private property and is accessible only from inside the plugin
 		var defaults = {
-
 			phrase : 'Bonne annee 2012',
-			color : 'red'
-
+			help : false,
+			helpColor : 'red'
 		}
 
 		// to avoid confusions, use "plugin" to reference the current instance of the object
@@ -82,11 +81,12 @@
 			for( i = 0; i < plugin.exclus.length; i++) {
 				if(plugin.exclus[i] != ' ') {
 					var ref = tirage();
-					$('#l' + ref).css({color:'red'}).text(plugin.exclus[i]).click(function() {
+					$('#l' + ref).text(plugin.exclus[i]).click(function() {
 						$(this).addClass('l' + $(this).text());
 						$(this).addClass('ok');
 						valid($(this).attr('id'))
 					});
+					if (plugin.settings.help == true) {$('#l' + ref).css({color:plugin.settings.helpColor})};
 					plugin.items.push('l' + ref);
 				}
 			}
